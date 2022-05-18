@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div
+            style="display: flex; width: 300px; height: 100px; justify-content: space-between; flex-direction: column;">
+            <input id="login" name="username" placeholder="Login" value="slepire7" onblur="preencherLogin(this)">
+            <input id="senha" name="password" placeholder="Senha" type="password" onblur="preencherLogin(this)">
+            <input id="api-key" name="apiKey" placeholder="Api Key" value="3f76de666114badf6c2f6efeb5d9ad51"
+                onblur="preencherLogin(this)">
+            <button id="login-button">Login</button>
+        </div>
+        <div id="search-container" style="margin-left: 20px">
+            <input id="search" placeholder="Escreva...">
+            <button id="search-button">Pesquisar Filme</button>
+        </div>
+        <div id="frmcriarlista"
+            style="display: flex; width: 300px; height: 100px; justify-content: space-between; flex-direction: column; margin-left: 20px;">
+            <input id="txtnome" name="name" placeholder="nome lista" required onchange="preencherReqLista(this)">
+            <input id="txtdescricao" name="description" placeholder="descricao" type="text"
+                onchange="preencherReqLista(this)">
+            <button id="lista-button">Criar Lista</button>
+        </div>
+    </div>
+
+    <div style="display: flex; margin: auto;">
+        <div style="width: 50%; padding: 10px; padding-top:60px;">
+            <table id="tableResultado">
+                <thead>
+                    <tr>
+                        <th>Nome Filme</th>
+                        <th>Adicionar a minha lista</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyResultado">
+                </tbody>
+            </table>
+        </div>
+        <div id="sectionnomelista" style="width: 50%; padding: 10px; display: none;">
+            <p id="nomeLista">
+            </p>
+            <table id="tableMinhaLista">
+                <thead>
+                    <tr>
+                        <th>Nome Filme</th>
+                        <th>Adicionar a minha lista</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyMinhaLista">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="dist/respostas/desafio4.js" defer></script>
+</body>
+
+</html>
